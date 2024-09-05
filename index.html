@@ -1,0 +1,532 @@
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+
+    <title>Audio samples from "EFFECTIVE ONE-SHOT VOICE CLONING WITH MULTIFACETED SPEAKER REPRESENTATION"</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+
+  </head>
+
+  <body>
+
+    <article>
+
+      <header>
+
+        <h1>Audio samples from "EFFECTIVE ONE-SHOT VOICE CLONING WITH MULTIFACETED SPEAKER REPRESENTATION"</h1>
+
+      </header>
+
+    </article>
+
+
+    <p><b>Authors</b>: Chunhui Lu, Xue Wen, Liming Song, June Sig Sung</p>
+
+
+
+    <div><b>Abstract:</b>
+
+        </br> Voice cloning is particularly challenging in the one-shot scenario, mainly because of increased uncertainty of speaker characteristics that necessarily accompanies limited observation. In this work we aim at improving speaker similarity in the one-shot setup by explicitly conditioning on several perceptually salient dimensions of speaker variance. In particular, we identify features responsible for timbral, phonetic and prosodic variances of speech, and train the synthesizer to transfer such features from enrolment example to synthetic speech, so that the latter imitates the former in multiple meaningful ways simultaneously. 
+    We compare alternative designs for defining and applying these features, and study the effectiveness of our scheme under different enrolment setups. 
+    </div>
+
+    &nbsp;
+
+
+
+<p>This pages contains a set of speech samples used in our subjective evaluations.<b>All utterances and speakers are unseen in model training.</b></p>
+ &nbsp;
+
+<h3>Compared systems</h3>
+  
+<ul>
+<li>Toplines: Reconstructing target speech</li> 
+<b>GT</b>: analysis-synthesis with the HiFi-GAN vocoder.<br>
+<b>GT-RECON</b>: analysis-synthesis by the proposed system via z=(z<sub>a</sub>,z<sub>p</sub>,z<sub>v</sub>).<br>
+<b>GT-TRANS</b>: analysis-synthesis by the proposed system via z=(z<sub>a</sub>',z<sub>p</sub>',z<sub>v</sub>), where z<sub>a</sub>' and z<sub>p</sub>' are encoded from random utterances of other speakers. For assessing the contribution of z<sub>v</sub> alone.<br>
+<li>Proposed system and variants for ablation study:</li>
+<b>SYN-ALL</b>: voice cloning TTS. Main system.<br>
+<b>SYN-VA</b>: without using prosody embedding <br>
+<b>SYN-VP</b>: without using accent embedding<br>
+<b>SYN-V</b>: without using accent or prosody embedding
+<li>Two baseline systems:</li>
+<b>FS+dvector</b>: Multi-speaker FastSpeech with speaker code from pre-trained speaker verification model.<br>
+<b>Meta-StyleSpeech</b>
+</ul>
+  
+<h3>Samples for GT and GT-RECON</h3>
+  
+<table>
+  <tbody>
+    <tr>
+      <td>Speaker</td>
+      <td align="center">Target</td>
+      <td align="center">GT</td>
+      <td align="center">GT-RECON</td>
+    </tr>
+    <tr>
+      <th>1089</th>
+      <td><audio controls=""><source src="github-demos/ref/1089_134686_000002_000000.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/GT/wav-1089_134686_000002_000000.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/RECON/wav-reconstruct-spk-1089_134686_000002_000000-text-1089_134686_000002_000000.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>1284</th>
+      <td><audio controls=""><source src="github-demos/ref/1284_1180_000007_000001.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/GT/wav-1284_1180_000007_000001.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/RECON/wav-reconstruct-spk-1284_1180_000007_000001-text-1284_1180_000007_000001.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>1320</th>
+      <td><audio controls=""><source src="github-demos/ref/1320_122612_000006_000001.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/GT/wav-1320_122612_000006_000001.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/RECON/wav-reconstruct-spk-1320_122612_000006_000001-text-1320_122612_000006_000001.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td><audio controls=""><source src="github-demos/ref/237_134493_000006_300003.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/GT/wav-237_134493_000006_300003.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/RECON/wav-reconstruct-spk-237_134493_000006_300003-text-237_134493_000006_300003.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>p251</th>
+      <td><audio controls=""><source src="github-demos/ref/p251_077.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/GT/wav-p251_077.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/RECON/wav-reconstruct-spk-p251_077-text-p251_077.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>p323</th>
+      <td><audio controls=""><source src="github-demos/ref/p323_088.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/GT/wav-p323_088.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/RECON/wav-reconstruct-spk-p323_088-text-p323_088.wav"></audio></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3>Samples for GT-TRANS</h3>
+<table>
+  <tbody>
+    <tr>
+      <td>Speaker</td>
+      <td align="center">Target Timbre</td>
+      <td align="center">Target Accent & prosody</td>
+      <td align="center">GT-TRANS</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td><audio controls=""><source src="github-demos/ref/237_134493_000002_100004.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ref/8555_284447_000018_000003.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/TRANS/wav-transfer2-spk-237_134493_000002_100004-text-8555_284447_000018_000003.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>4507</th>
+      <td><audio controls=""><source src="github-demos/ref/4507_16021_000023_000000_2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ref/p323_045.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/TRANS/wav-transfer2-spk-4507_16021_000023_000000_2-text-p323_045.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>7127</th>
+      <td><audio controls=""><source src="github-demos/ref/7127_75946_000014_000000.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ref/2830_3979_000019_000003.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/TRANS/wav-transfer2-spk-7127_75946_000014_000000-text-2830_3979_000019_000003.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>8230</th>
+      <td><audio controls=""><source src="github-demos/ref/8230_279154_000004_000006.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ref/1320_122612_000020_000000.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/TRANS/wav-transfer2-spk-8230_279154_000004_000006-text-1320_122612_000020_000000.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>p299</th>
+      <td><audio controls=""><source src="github-demos/ref/p299_007.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ref/1188_133604_000055_000001.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/TRANS/wav-transfer2-spk-p299_007-text-1188_133604_000055_000001.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>p304</th>
+      <td><audio controls=""><source src="github-demos/ref/p304_036.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ref/p251_037.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/TRANS/wav-transfer2-spk-p304_036-text-p251_037.wav"></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Samples for one-shot cloning</h3>
+<table  width= "2600" >
+  <tbody>
+    <tr>
+      <td width= "100">Speaker</td>
+      <td align="center" width= "250">Enrolment<br>Recording</td>
+      <td align="center" width= "750">Text</td>
+      <td align="center" width= "250">SYN-ALL</td>
+      <td align="center" width= "250">SYN-VA</td>
+      <td align="center" width= "250">SYN-VP</td>
+      <td align="center" width= "250">SYN-V</td>
+      <td align="center" width= "250">FS-dvector</td>
+      <td align="center" width= "250">Meta-StyleSpeech</td>
+    </tr>
+    <tr>
+      <th rowspan="2">1089</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/1089_134686_000001_200001.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1089_134686_000001_200001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1089_134686_000001_200001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1089_134686_000001_200001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1089_134686_000001_200001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1089_134686_000001_200001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1089_134686_000001_200001-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1089_134686_000001_200001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1089_134686_000001_200001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1089_134686_000001_200001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1089_134686_000001_200001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1089_134686_000001_200001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1089_134686_000001_200001-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">1284</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/1284_1180_000005_000001.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1284_1180_000005_000001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1284_1180_000005_000001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1284_1180_000005_000001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1284_1180_000005_000001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1284_1180_000005_000001-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1284_1180_000005_000001-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Six spoons of fresh snow peas five thick slabs of blue cheese and maybe a snack for her brother Bob.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1284_1180_000005_000001-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1284_1180_000005_000001-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1284_1180_000005_000001-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1284_1180_000005_000001-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1284_1180_000005_000001-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1284_1180_000005_000001-text-2.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">1320</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/1320_122612_000006_000001.wav"></audio></th>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1320_122612_000006_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1320_122612_000006_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1320_122612_000006_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1320_122612_000006_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1320_122612_000006_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1320_122612_000006_000001-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>We also need a small plastic snake and a big toy frog for the kids.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1320_122612_000006_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1320_122612_000006_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1320_122612_000006_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1320_122612_000006_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1320_122612_000006_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1320_122612_000006_000001-text-3.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">1995</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/1995_1836_000007_100002.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1995_1836_000007_100002-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1995_1836_000007_100002-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1995_1836_000007_100002-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1995_1836_000007_100002-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1995_1836_000007_100002-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1995_1836_000007_100002-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-1995_1836_000007_100002-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-1995_1836_000007_100002-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-1995_1836_000007_100002-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-1995_1836_000007_100002-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-1995_1836_000007_100002-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-1995_1836_000007_100002-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">2830</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/2830_3980_000024_000003.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-2830_3980_000024_000003-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-2830_3980_000024_000003-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-2830_3980_000024_000003-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-2830_3980_000024_000003-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-2830_3980_000024_000003-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-2830_3980_000024_000003-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-2830_3980_000024_000003-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-2830_3980_000024_000003-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-2830_3980_000024_000003-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-2830_3980_000024_000003-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-2830_3980_000024_000003-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-2830_3980_000024_000003-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">7127</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/7127_75946_000002_000001.wav"></audio></th>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-7127_75946_000002_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-7127_75946_000002_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-7127_75946_000002_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-7127_75946_000002_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-7127_75946_000002_000001-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-7127_75946_000002_000001-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>We also need a small plastic snake and a big toy frog for the kids.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-7127_75946_000002_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-7127_75946_000002_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-7127_75946_000002_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-7127_75946_000002_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-7127_75946_000002_000001-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-7127_75946_000002_000001-text-3.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">8555</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/8555_284447_000014_000000.wav"></audio></th>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-8555_284447_000014_000000-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-8555_284447_000014_000000-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-8555_284447_000014_000000-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-8555_284447_000014_000000-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-8555_284447_000014_000000-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-8555_284447_000014_000000-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>We also need a small plastic snake and a big toy frog for the kids.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-8555_284447_000014_000000-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-8555_284447_000014_000000-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-8555_284447_000014_000000-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-8555_284447_000014_000000-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-8555_284447_000014_000000-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-8555_284447_000014_000000-text-3.wav"></audio></td>
+    </tr>
+      <tr>
+      <th rowspan="2">p226</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/p226_017.wav"></audio></th>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-p226_017-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-p226_017-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-p226_017-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-p226_017-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-p226_017-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-p226_017-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>She can scoop these things into three red bags and we will go meet her Wednesday at the train station.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-p226_017-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-p226_017-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-p226_017-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-p226_017-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-p226_017-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-p226_017-text-4.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">p323</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/p323_020.wav"></audio></th>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-p323_020-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-p323_020-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-p323_020-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-p323_020-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-p323_020-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-p323_020-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Six spoons of fresh snow peas five thick slabs of blue cheese and maybe a snack for her brother Bob.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-1ShotSyn-spk-p323_020-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-1ShotSyn-spk-p323_020-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-1ShotSyn-spk-p323_020-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-1ShotSyn-spk-p323_020-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-1ShotSyn-spk-p323_020-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-1ShotSyn-spk-p323_020-text-2.wav"></audio></td>
+    </tr>
+  </tbody>
+</table>
+  
+  
+<h3>Samples for 5-shot cloning</h3>
+<table width= "2600">
+  <tbody>
+    <tr>
+      <td width= "100">Speaker</td>
+      <td align="center" width= "250">Enrolment<br>Recording</td>
+      <td align="center" width= "750">Text</td>
+      <td align="center" width= "250">SYN-ALL</td>
+      <td align="center" width= "250">SYN-VA</td>
+      <td align="center" width= "250">SYN-VP</td>
+      <td align="center" width= "250">SYN-V</td>
+      <td align="center" width= "250">FS-dvector</td>
+      <td align="center" width= "250">Meta-StyleSpeech</td>
+    </tr>
+    <tr>
+      <th rowspan="2">1284</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/1284_21063.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-1284_21063-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-1284_21063-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-1284_21063-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-1284_21063-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-1284_21063-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-1284_21063-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-1284_21063-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-1284_21063-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-1284_21063-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-1284_21063-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-1284_21063-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-1284_21063-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">1320</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/1320_32410.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-1320_32410-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-1320_32410-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-1320_32410-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-1320_32410-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-1320_32410-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-1320_32410-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Six spoons of fresh snow peas five thick slabs of blue cheese and maybe a snack for her brother Bob.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-1320_32410-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-1320_32410-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-1320_32410-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-1320_32410-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-1320_32410-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-1320_32410-text-2.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">237</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/237_04563.wav"></audio></th>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-237_04563-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-237_04563-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-237_04563-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-237_04563-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-237_04563-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-237_04563-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>She can scoop these things into three red bags and we will go meet her Wednesday at the train station.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-237_04563-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-237_04563-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-237_04563-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-237_04563-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-237_04563-text-4.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-237_04563-text-4.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">2830</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/2830_52416.wav"></audio></th>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-2830_52416-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-2830_52416-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-2830_52416-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-2830_52416-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-2830_52416-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-2830_52416-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>We also need a small plastic snake and a big toy frog for the kids.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-2830_52416-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-2830_52416-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-2830_52416-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-2830_52416-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-2830_52416-text-3.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-2830_52416-text-3.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">7127</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/7127_31025.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-7127_31025-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-7127_31025-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-7127_31025-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-7127_31025-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-7127_31025-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-7127_31025-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-7127_31025-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-7127_31025-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-7127_31025-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-7127_31025-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-7127_31025-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-7127_31025-text-1.wav"></audio></td>
+    </tr>
+    <tr>
+      <th rowspan="2">8230</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/8230_10264.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-8230_10264-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-8230_10264-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-8230_10264-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-8230_10264-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-8230_10264-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-8230_10264-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Ask her to bring these things with her from the store.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-8230_10264-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-8230_10264-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-8230_10264-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-8230_10264-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-8230_10264-text-1.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-8230_10264-text-1.wav"></audio></td>
+    </tr>
+        <tr>
+      <th rowspan="2">p299</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/p299_41532.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-p299_41532-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-p299_41532-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-p299_41532-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-p299_41532-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-p299_41532-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-p299_41532-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Six spoons of fresh snow peas five thick slabs of blue cheese and maybe a snack for her brother Bob.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-p299_41532-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-p299_41532-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-p299_41532-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-p299_41532-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-p299_41532-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-p299_41532-text-2.wav"></audio></td>
+    </tr>
+        <tr>
+      <th rowspan="2">p304</th>
+      <th rowspan="2"><audio controls=""><source src="github-demos/ref/p304_03412.wav"></audio></th>
+      <th>Please call Stella.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-p304_03412-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-p304_03412-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-p304_03412-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-p304_03412-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-p304_03412-text-0.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-p304_03412-text-0.wav"></audio></td>
+    </tr>
+    <tr>
+      <th>Six spoons of fresh snow peas five thick slabs of blue cheese and maybe a snack for her brother Bob.</th>
+      <td><audio controls=""><source src="github-demos/ALL-SYN/wav-5ShotSyn-spk-p304_03412-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VA/wav-5ShotSyn-spk-p304_03412-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-VP/wav-5ShotSyn-spk-p304_03412-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/ALL-V/wav-5ShotSyn-spk-p304_03412-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/FS-DVEC/wav-5ShotSyn-spk-p304_03412-text-2.wav"></audio></td>
+      <td><audio controls=""><source src="github-demos/METASTYLE/wav-5ShotSyn-spk-p304_03412-text-2.wav"></audio></td>
+    </tr>
+  </tbody>
+</table>
